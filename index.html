@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Muthia Qurrota Aini! 🎉</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            max-width: 480px;
+            width: 90%;
+            animation: bounceIn 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0); opacity: 0; }
+            70% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s infinite alternate;
+        }
+
+        .name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffd3b6;
+            margin-bottom: 15px;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(255, 117, 140, 0.5); }
+            to { text-shadow: 0 0 25px rgba(255, 117, 140, 0.9); }
+        }
+
+        .card-message {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #f1f1f1;
+            border-left: 4px solid #ff758c;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 117, 140, 0.7);
+        }
+
+        .hidden-msg {
+            display: none;
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: #ffd3b6;
+            animation: fadeIn 0.8s ease-in-out;
+            line-height: 1.5;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+        <h1>🎉 Happy Birthday! 🎂</h1>
+        <div class="name">Muthia Qurrota Aini ✨</div>
+        
+        <div class="card-message">
+            <p>Selamat ulang tahun, semoga umurnya selalu diberkahi, dan Allah selalu jaga dimanapun dan kapan pun ituu, wish all u the best lah pokoknya! 🤲💖</p>
+        </div>
+
+        <button class="btn" onclick="showSurprise()">Klik Kejutan Disini 🎁</button>
+
+        <div class="hidden-msg" id="surpriseText">
+            <p>✨ Semoga di usia yang baru ini, segala hal baik, kebahagiaan, dan kelancaran selalu menyertai hari-harimu. Tetap jadi pribadi yang hebat ya! 🥳🥂</p>
+        </div>
+    </div>
+
+    <script>
+        const starsContainer = document.getElementById('stars');
+        const numberOfStars = 50;
+
+        for (let i = 0; i < numberOfStars; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            const size = Math.random() * 3 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.animationDuration = `${Math.random() * 3 + 1}s`;
+            star.style.animationDelay = `${Math.random() * 2}s`;
+            starsContainer.appendChild(star);
+        }
+
+        function showSurprise() {
+            const msg = document.getElementById('surpriseText');
+            msg.style.display = (msg.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
